@@ -1,3 +1,7 @@
+require("honeycomb-beeline")({
+  // writeKey and dataset from env
+});
+
 var http = require('http'),
     path = require('path'),
     methods = require('methods'),
