@@ -1,6 +1,12 @@
 require("honeycomb-beeline")({
   // writeKey and dataset from env
-  express: { userContext: ['payload'] },
+  express: {
+    userContext: function (req) {
+      return req.payload && {
+        userID: req.payload.id,
+      };
+    },
+  },
 });
 
 var http = require('http'),
